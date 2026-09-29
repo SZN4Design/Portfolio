@@ -5,6 +5,8 @@
   const progressBar = document.getElementById("progressBar");
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
+  if (!("IntersectionObserver" in window)) return;
+  document.documentElement.classList.add("motion-ready");
   // --- Basic reveal observer ---
   const revealObserver = new IntersectionObserver(
     entries => {

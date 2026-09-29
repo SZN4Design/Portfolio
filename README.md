@@ -1,54 +1,37 @@
-# SZN4.DESIGN — Combined Vercel Site
+# SZN4.DESIGN — complete portfolio
 
-This package combines:
+Static, responsive portfolio for Sabrina Mohammed. No chatbot, framework, package install, or build step is required.
 
-- `/` — animated welcome page
-- `/about-me` — animated storytelling About Me page
-- About Me CTA on the welcome page now points to `/about-me/`
+## Routes
 
-## Important routing note
+- `/` — original animated Welcome, with direct Work/About/Contact navigation
+- `/about-me/` — original About story, headshot, imagery and contact form
+- `/ui-ux-projects/` — four-project collection with FragranceBuy featured
+- `/fragrancebuy-deals-vs-discovery/`
+- `/crvnchmode-designing-a-smarter-way-to-choose-a-car/`
+- `/dealer-listing-optimization-platform/` — ListIQ
+- `/market-demand-forecaster/`
 
-The **View Projects** links still point to:
+The former `/welcome-1`, `/work`, and `/projects` routes redirect to their current destinations. Original case-study URLs are preserved.
 
-https://szn4.design/ui-ux-projects
+## Vercel
 
-If `szn4.design` is later moved fully to Vercel while project pages remain hosted in
-Adobe Portfolio, you will need a Vercel rewrite/proxy for the Adobe-hosted project
-paths. The current package intentionally does not guess your Adobe `myportfolio.com`
-origin.
+This continues the existing SZN4Design/portfolio project. Framework preset: Other. No build command. Serve the repository root. `vercel.json` retains clean URLs and trailing-slash routing.
 
-## Deploy to Vercel from GitHub
+For a local preview, run `python3 -m http.server 8123` in this directory.
 
-1. Create a GitHub repository.
-2. Upload the contents of this folder to the repository root.
-3. In Vercel, choose **Add New → Project**.
-4. Import the GitHub repository.
-5. Framework preset: **Other**.
-6. Leave build command empty.
-7. Leave output directory empty.
-8. Deploy.
+## Content and assets
 
-Vercel should serve:
-- `/` from root `index.html`
-- `/about-me` from `about-me/index.html`
+All 34 original Adobe case-study images and four covers are hosted locally under `assets/projects/`, with their bytes unchanged. The prepared FragranceBuy study is included and its full original Adobe presentation remains available in an expandable section. Supplied FragranceBuy prototype and wireframe screenshots are preserved as PNGs. Original About images remain unchanged.
 
-## Contact form
+FragranceBuy A and B are conceptual design directions, not a completed A/B test. Its dashboards contain illustrative data, and the measurement plans are proposed. CRVNCHMODE, ListIQ and Market Demand Forecaster contain mock data; scores, forecasts and performance benefits are not presented as validated business outcomes.
 
-The About page sends messages via FormSubmit to:
+The five existing interactive prototypes remain linked to their existing Vercel deployments. They are separate applications and are not rebuilt by this portfolio. The portfolio pages and images no longer depend on Adobe Portfolio.
 
-sabrina@szn4.design
+## Contact
 
-FormSubmit may send a one-time activation email to that address after the first test.
-Confirm it before relying on the form publicly.
+The existing FormSubmit form and email address (`sabrina@szn4.design`) are preserved. Delivery still depends on the recipient's FormSubmit activation. Verification checks form markup and validation without sending messages. Do not infer delivery from the local success query parameter.
 
+## Accessibility and maintenance
 
-## About-page asset-path fix
-
-This version fixes the Vercel `/about-me` issue by:
-- using `/about-me/styles.css`
-- using `/about-me/script.js`
-- using `/about-me/assets/...` for all About images
-- enabling trailing-slash routing in `vercel.json`
-
-This prevents the About page from accidentally loading the welcome page's root CSS
-and prevents image requests from incorrectly going to `/assets/...`.
+Navigation and case-study content work without JavaScript. JavaScript progressively enables scroll effects and image dialogs. Dialogs support keyboard focus, Escape, full-size zoom and original-image links. Reduced-motion preferences are respected. New page styling is in `assets/projects.css`; shared navigation/footer styling is in `assets/site.css`.

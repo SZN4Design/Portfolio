@@ -1,4 +1,9 @@
 {
   "cleanUrls": true,
-  "trailingSlash": true
+  "trailingSlash": true,
+  "redirects": [
+    { "source": "/welcome-1", "destination": "/", "permanent": true },
+    { "source": "/work", "destination": "/ui-ux-projects/", "permanent": true },
+    { "source": "/projects", "destination": "/ui-ux-projects/", "permanent": true }
+  ]
 }
