@@ -74,5 +74,6 @@
   }
 
   reduceMotion.addEventListener?.("change", () => window.location.reload());
+  if (!reduceMotion.matches) document.documentElement.classList.add("motion-ready");
   init();
 })();

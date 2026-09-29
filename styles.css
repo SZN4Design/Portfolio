@@ -92,8 +92,8 @@ body {
   padding: 6vh 0;
   text-align: center;
   --scale: .80;
-  --opacity: .24;
-  --blur: 1.6px;
+  --opacity: 1;
+  --blur: 0px;
   --tracking-multiplier: 1;
   transform: scale(var(--scale));
   opacity: var(--opacity);
@@ -231,3 +231,9 @@ body {
   .cta-card { opacity: 1 !important; transform: none !important; transition: none !important; }
   .scroll-arrow { animation: none; }
 }
+
+/* The welcome remains scroll-led, with direct navigation available above. */
+.intro h1{margin:0;font:inherit;letter-spacing:inherit}
+.cta-card{opacity:1;transform:none}
+.motion-ready .cta-card{opacity:0;transform:translateY(26px) scale(.985)}
+.motion-ready .cta-section.is-visible .cta-card{opacity:1;transform:none}
