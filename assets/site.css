@@ -21,3 +21,8 @@
 .portfolio-nav nav{margin-left:auto}
 @media(max-width:600px){.nav-social{gap:0;margin-left:8px;padding-left:6px}.nav-social a{width:30px;height:30px}.nav-social svg{width:14px;height:14px}}
 @media(max-width:400px){.portfolio-nav{padding:0 14px}.portfolio-nav nav{gap:12px}}
+
+.portfolio-nav .wordmark{display:inline-flex;align-items:center;gap:10px}
+.brand-mark{flex:none;display:block}
+@media(max-width:600px){.portfolio-nav .wordmark{gap:7px}.brand-mark{width:22px;height:22px}}
+@media(max-width:400px){.portfolio-nav .wordmark span{display:none}.brand-mark{width:28px;height:28px}}

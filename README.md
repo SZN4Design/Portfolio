@@ -1,37 +1,68 @@
-# SZN4.DESIGN — complete portfolio
+<img src="assets/brand/szn4-logo-horizontal-on-cream.svg" alt="SZN4.design" width="360">
 
-Static, responsive portfolio for Sabrina Mohammed. No chatbot, framework, package install, or build step is required.
+# szn4.design
+
+Source for **[szn4.design](https://www.szn4.design/)**, the portfolio of Sabrina Mohammed, a Toronto-based UX/UI designer who designs ecommerce and product experiences and builds them as working prototypes and Shopify front-ends.
+
+Static, responsive HTML, CSS and JavaScript. No framework, no package install, no build step.
+
+## Case studies
+
+| Project | Focus | Prototype | Code |
+|---|---|---|---|
+| [FragranceBuy: Deals vs. Discovery](https://www.szn4.design/fragrancebuy-deals-vs-discovery/) | Ecommerce · CRO | [A](https://fragrancebuy-redesign.vercel.app/) · [B](https://fragrancebuy-redesign-protoype-b.vercel.app/) | [A](https://github.com/SZN4Design/Fragrancebuy-redesign) · [B](https://github.com/SZN4Design/Fragrancebuy-redesign-ProtoypeB) |
+| [CRVNCHMODE](https://www.szn4.design/crvnchmode-designing-a-smarter-way-to-choose-a-car/) | Automotive · decision UX | [Live](https://crunchmode.vercel.app/) | [Repo](https://github.com/SZN4Design/Crunchmode) |
+| [ListIQ](https://www.szn4.design/dealer-listing-optimization-platform/) | B2B · AI-assisted UX | [Live](https://listing-quality-assistant.vercel.app/) | [Repo](https://github.com/SZN4Design/Listing-quality-assistant) |
+| [Market Demand Forecaster](https://www.szn4.design/market-demand-forecaster/) | Data visualization | [Live](https://demand-flow-advisor.vercel.app/) | [Repo](https://github.com/SZN4Design/Demand-flow-advisor) |
 
 ## Routes
 
-- `/` — original animated Welcome, with direct Work/About/Contact navigation
-- `/about-me/` — original About story, headshot, imagery and contact form
-- `/ui-ux-projects/` — four-project collection with FragranceBuy featured
-- `/fragrancebuy-deals-vs-discovery/`
-- `/crvnchmode-designing-a-smarter-way-to-choose-a-car/`
-- `/dealer-listing-optimization-platform/` — ListIQ
-- `/market-demand-forecaster/`
+- `/`: animated welcome with a wheel-style scroll intro, then role statement and selected work
+- `/about-me/`: story, skills and contact form
+- `/ui-ux-projects/`: all case studies
+- `/fragrancebuy-deals-vs-discovery/`, `/crvnchmode-designing-a-smarter-way-to-choose-a-car/`, `/dealer-listing-optimization-platform/` (ListIQ), `/market-demand-forecaster/`
 
-The former `/welcome-1`, `/work`, and `/projects` routes redirect to their current destinations. Original case-study URLs are preserved.
+The old `/welcome-1`, `/work` and `/projects` routes redirect to their current pages (see `vercel.json`).
 
-## Vercel
+## Structure
 
-This continues the existing SZN4Design/portfolio project. Framework preset: Other. No build command. Serve the repository root. `vercel.json` retains clean URLs and trailing-slash routing.
+```
+index.html, styles.css, script.js   Welcome page and scroll effect
+assets/site.css                     Shared nav (with social icons) and footer
+assets/projects.css, projects.js    Work page and case-study pages
+assets/brand/                       Logo, mark and favicons
+assets/projects/<slug>/             Case-study images
+about-me/                           About page, its styles and images
+fragrancebuy-deals-vs-discovery/    FragranceBuy case study (own styles and script)
+```
 
-For a local preview, run `python3 -m http.server 8123` in this directory.
+## Brand
 
-## Content and assets
+- **Colours:** Espresso `#4E392C`, Deep `#2E241E`, Cream `#F4EEE6`, Sand `#C8B79F`, Clay `#B9785E`
+- **Type:** Instrument Serif (headlines, italic for emphasis) and DM Sans (body, labels, nav)
+- **Mark:** a "season wheel": four arcs for the four seasons in SZN4, with a dot marking the current one
 
-All 34 original Adobe case-study images and four covers are hosted locally under `assets/projects/`, with their bytes unchanged. The prepared FragranceBuy study is included and its full original Adobe presentation remains available in an expandable section. Supplied FragranceBuy prototype and wireframe screenshots are preserved as PNGs. Original About images remain unchanged.
+## Run locally
 
-FragranceBuy A and B are conceptual design directions, not a completed A/B test. Its dashboards contain illustrative data, and the measurement plans are proposed. CRVNCHMODE, ListIQ and Market Demand Forecaster contain mock data; scores, forecasts and performance benefits are not presented as validated business outcomes.
+```bash
+python3 -m http.server 8123
+# then visit http://localhost:8123
+```
 
-The five existing interactive prototypes remain linked to their existing Vercel deployments. They are separate applications and are not rebuilt by this portfolio. The portfolio pages and images no longer depend on Adobe Portfolio.
+Deployed on Vercel from `main` (framework preset: Other, no build command).
 
-## Contact
+## Accessibility
 
-The existing FormSubmit form and email address (`sabrina@szn4.design`) are preserved. Delivery still depends on the recipient's FormSubmit activation. Verification checks form markup and validation without sending messages. Do not infer delivery from the local success query parameter.
+Navigation and content work without JavaScript; scroll effects, the delayed home nav and image dialogs are progressive enhancements. Reduced-motion preferences turn the scroll effects off. Dialogs support keyboard focus and Escape.
 
-## Accessibility and maintenance
+## Contact form
 
-Navigation and case-study content work without JavaScript. JavaScript progressively enables scroll effects and image dialogs. Dialogs support keyboard focus, Escape, full-size zoom and original-image links. Reduced-motion preferences are respected. New page styling is in `assets/projects.css`; shared navigation/footer styling is in `assets/site.css`.
+The About page form posts to FormSubmit at `sabrina@szn4.design`. Delivery depends on FormSubmit activation for that address.
+
+## A note on data
+
+All four case studies are self-initiated concepts. Scores, forecasts, prices and metrics in the prototypes are illustrative, not measured results.
+
+---
+
+[szn4.design](https://www.szn4.design/) · [LinkedIn](https://www.linkedin.com/in/sabrina-mohammed-31694483/) · [Digital products on Etsy](https://www.etsy.com/ca/shop/SZN4Design) · sabrina@szn4.design
