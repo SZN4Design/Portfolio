@@ -7,32 +7,36 @@
   let ticking = false;
   const clamp = (value, min, max) => Math.min(Math.max(value, min), max);
 
+  const nav = document.getElementById("homeNav");
+  if (nav && !reduceMotion.matches) nav.classList.add("nav-hidden");
+
+  function updateNav() {
+    if (!nav || !ctaSection) return;
+    const show = ctaSection.getBoundingClientRect().top < window.innerHeight * 0.55;
+    nav.classList.toggle("nav-hidden", !show);
+  }
+
   function updateLines() {
     const viewportHeight = window.innerHeight;
     const viewportCenter = viewportHeight / 2;
-    const isMobile = window.innerWidth <= 760;
+    const range = viewportHeight * 0.62;
 
     lines.forEach((line) => {
-      const rect = line.getBoundingClientRect();
-      const lineCenter = rect.top + rect.height / 2;
-      const distance = Math.abs(viewportCenter - lineCenter);
-      const range = viewportHeight * (isMobile ? 0.72 : 0.64);
-      const progress = clamp(1 - distance / range, 0, 1);
-      const eased = 1 - Math.pow(1 - progress, 3);
+      const center = line.offsetTop + line.offsetParent.offsetTop + line.offsetHeight / 2 - window.scrollY; // layout position, ignores transforms
+      const offset = (center - viewportCenter) / range; // -1 above, +1 below
+      const d = clamp(Math.abs(offset), 0, 1.4);
+      const near = clamp(1 - d, 0, 1);
+      const eased = 1 - Math.pow(1 - near, 2.2);
 
-      const minScale = parseFloat(line.dataset.minScale || "0.80");
-      let maxScale = parseFloat(line.dataset.maxScale || "1.08");
-      if (isMobile) maxScale = 1 + (maxScale - 1) * 0.55;
-
-      const scale = minScale + (maxScale - minScale) * eased;
-      const opacity = 0.24 + 0.76 * eased;
-      const blur = 1.6 * (1 - eased);
-      const trackingMultiplier = 1.12 - 0.12 * eased;
+      const scale = 0.5 + 0.5 * eased;               // largest in the middle
+      const opacity = clamp(1 - Math.pow(d, 1.6), 0, 1); // fades to nothing at the edges
+      const tilt = clamp(offset, -1.2, 1.2) * -30;    // rolls like a wheel
+      const blur = 2.2 * (1 - eased);
 
       line.style.setProperty("--scale", scale.toFixed(4));
       line.style.setProperty("--opacity", opacity.toFixed(4));
+      line.style.setProperty("--tilt", `${tilt.toFixed(2)}deg`);
       line.style.setProperty("--blur", `${blur.toFixed(2)}px`);
-      line.style.setProperty("--tracking-multiplier", trackingMultiplier.toFixed(4));
     });
 
     if (scrollCue) scrollCue.classList.toggle("is-hidden", window.scrollY > 40);
@@ -41,6 +45,7 @@
     document.documentElement.style.setProperty("--ambient-one-y", `${y * 0.028}px`);
     document.documentElement.style.setProperty("--ambient-two-y", `${-y * 0.020}px`);
 
+    updateNav();
     ticking = false;
   }
 

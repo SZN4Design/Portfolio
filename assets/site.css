@@ -12,3 +12,12 @@
 :focus-visible{outline:3px solid #ac7853;outline-offset:5px}
 @media(max-width:600px){.portfolio-nav{min-height:68px;gap:10px}.portfolio-nav .wordmark{font-size:10px;letter-spacing:.1em}.portfolio-nav nav{gap:16px}.portfolio-nav nav a{font-size:10px;letter-spacing:.04em}.footer-invite{align-items:flex-start;flex-direction:column}.portfolio-footer{padding-top:52px}.project-switcher{gap:18px}.project-switcher strong{font-size:27px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+
+.portfolio-nav{display:flex}
+.portfolio-nav .nav-right{display:flex;align-items:center}
+.nav-social{display:flex;align-items:center;gap:4px;margin-left:clamp(10px,2vw,28px);padding-left:clamp(10px,2vw,24px);border-left:1px solid currentColor;border-left-color:color-mix(in srgb,currentColor 30%,transparent)}
+.nav-social a{display:inline-grid;place-items:center;width:34px;height:34px;color:inherit;border-radius:50%;opacity:.82;transition:opacity .2s,background-color .2s}
+.nav-social a:hover{opacity:1;background:color-mix(in srgb,currentColor 12%,transparent)}
+.portfolio-nav nav{margin-left:auto}
+@media(max-width:600px){.nav-social{gap:0;margin-left:8px;padding-left:6px}.nav-social a{width:30px;height:30px}.nav-social svg{width:14px;height:14px}}
+@media(max-width:400px){.portfolio-nav{padding:0 14px}.portfolio-nav nav{gap:12px}}

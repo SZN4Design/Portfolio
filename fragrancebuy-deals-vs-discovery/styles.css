@@ -176,3 +176,23 @@ dialog img{width:auto;height:auto;max-width:100%;margin:auto}
 .metrics-b .metric-plan-label{color:#8a6a3c}
 @media(max-width:1000px){.glance{grid-template-columns:1fr 1fr}.glance>div,.glance>div+div{padding:18px 16px 18px 0;border-right:0;border-bottom:1px solid var(--line)}.glance>div:nth-child(even){padding-left:16px;border-left:1px solid var(--line)}}
 @media(max-width:650px){.fb-glance{padding-top:50px}.glance{grid-template-columns:1fr}.glance>div:nth-child(even){padding-left:0;border-left:0}.metric-plan dl>div{grid-template-columns:1fr;gap:6px}}
+
+/* Larger reading sizes */
+body{font-size:18px}
+.hero-copy>p:last-of-type{font-size:1.15rem}
+.intro-body{font-size:clamp(1.15rem,1.45vw,1.35rem)}
+.source-note,.test-note{font-size:15px}
+.measure{font-size:14px}
+figcaption{font-size:14.5px}
+.chapter-head>p{font-size:1.25rem}
+.feature-copy p{font-size:clamp(1.12rem,1.35vw,1.25rem)}
+.feature-copy .prediction{font-size:16px}
+.reflection p:not(.eyebrow){font-size:clamp(1.2rem,1.6vw,1.5rem)}
+.hyp-card p,.test-grid p,.metrics-grid>div>p:not(.eyebrow){font-size:1.15rem}
+.metrics-grid>div>p:not(.eyebrow){max-width:520px}
+.project-meta{font-size:13px}.project-meta b{font-size:10px}
+.concept-banner{font-size:14px}
+.glance dd{font-size:16.5px}.glance dt{font-size:11px}
+.metric-plan dd{font-size:17.5px}.metric-plan dt{font-size:12px}
+.eyebrow,.mini-label{font-size:12px}
+@media(max-width:650px){body{font-size:17px}.concept-banner{font-size:13px}.feature-copy p{font-size:1.08rem}}

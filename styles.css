@@ -309,3 +309,27 @@ body {
 .home-links{display:flex;flex-wrap:wrap;gap:12px 28px;margin-top:56px;padding-top:26px;border-top:1px solid rgba(244,238,230,.16)}
 .home-links a{color:rgba(244,238,230,.82);font-size:12px;font-weight:500;letter-spacing:.08em;text-decoration:none}
 .home-links a:hover{color:var(--cream);text-decoration:underline;text-underline-offset:5px}
+
+/* ---- Wheel scroll intro (v2) ---- */
+.scroll-stage{padding:calc(50vh - var(--slot) / 2) var(--page-pad) 0}
+:root{--slot:56vh;--line-size:clamp(34px,5vw,72px)}
+.zoom-line{min-height:0;height:var(--slot);padding:0;transform-origin:50% 50%;
+  transform:perspective(900px) rotateX(var(--tilt,0deg)) scale(var(--scale));backface-visibility:hidden}
+.zoom-line.eyebrow,.zoom-line.intro,.zoom-line.statement,.zoom-line.disciplines,.zoom-line.closing{
+  font-family:"Instrument Serif",Georgia,serif;font-weight:400;font-size:var(--line-size);line-height:1.08;
+  letter-spacing:0;text-transform:none}
+.zoom-line .line-inner{max-width:1000px}
+.zoom-line.disciplines span{padding:0 .12em}
+.circle{width:clamp(28px,3vw,46px)}
+.cta-section{min-height:100vh;padding:0}
+.home-work{padding-top:22vh}
+/* nav appears once the intro is done */
+.portfolio-nav.home-nav{position:fixed;background:rgba(68,49,38,.82);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);transition:opacity .45s ease,transform .45s ease}
+.portfolio-nav.home-nav.nav-hidden{opacity:0;transform:translateY(-100%);pointer-events:none}
+@media (max-width:760px){
+  :root{--slot:46vh;--line-size:clamp(30px,8.6vw,44px)}
+  .zoom-line{min-height:0;padding:0}
+  .scroll-stage{padding-top:calc(50vh - var(--slot) / 2);padding-bottom:0}
+}
+@media (max-width:390px){ .zoom-line{min-height:0} }
+@media (prefers-reduced-motion: reduce){ .portfolio-nav.home-nav.nav-hidden{opacity:1;transform:none;pointer-events:auto} }
