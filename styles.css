@@ -86,7 +86,7 @@ body {
 }
 
 .zoom-line {
-  min-height: 66vh;
+  min-height: 54vh;
   display: grid;
   place-items: center;
   padding: 6vh 0;
@@ -199,7 +199,7 @@ body {
 @media (max-width: 760px) {
   :root { --page-pad: 20px; }
   .scroll-stage { padding-top: 26vh; padding-bottom: 10vh; }
-  .zoom-line { min-height: 58vh; padding: 5vh 0; }
+  .zoom-line { min-height: 46vh; padding: 5vh 0; }
   .eyebrow, .closing { font-size: 12px; line-height: 1.55; letter-spacing: calc(.19em * var(--tracking-multiplier)); }
   .intro { font-size: clamp(22px, 7vw, 34px); line-height: 1.15; }
   .statement { font-size: clamp(40px, 12.5vw, 64px); line-height: 1.03; }
@@ -219,7 +219,7 @@ body {
 
 @media (max-width: 390px) {
   .statement { font-size: clamp(36px, 11.5vw, 50px); }
-  .zoom-line { min-height: 54vh; }
+  .zoom-line { min-height: 44vh; }
   .disciplines { font-size: 10px; }
 }
 
@@ -237,3 +237,71 @@ body {
 .cta-card{opacity:1;transform:none}
 .motion-ready .cta-card{opacity:0;transform:translateY(26px) scale(.985)}
 .motion-ready .cta-section.is-visible .cta-card{opacity:1;transform:none}
+
+/* Role statement + selected work on the welcome page */
+.closing-accent { color: var(--sand); }
+.cta-statement {
+  margin: 0 auto 30px;
+  max-width: 600px;
+  font-family: "Instrument Serif", Georgia, serif;
+  font-size: clamp(24px, 2.6vw, 34px);
+  line-height: 1.22;
+  text-wrap: balance;
+}
+.cta-section { min-height: 60vh; }
+.home-work {
+  position: relative;
+  z-index: 1;
+  width: min(100% - 2 * var(--page-pad), var(--max-content));
+  margin: 0 auto;
+  padding: 4vh 0 14vh;
+  scroll-margin-top: 90px;
+}
+.home-work-head { max-width: 760px; margin-bottom: 44px; }
+.home-work-head h2 {
+  margin: 0 0 14px;
+  font-family: "Instrument Serif", Georgia, serif;
+  font-weight: 400;
+  font-size: clamp(44px, 6vw, 84px);
+  line-height: 1;
+}
+.home-work-head h2 em { color: var(--sand); }
+.home-work-head p:last-child { margin: 0; color: rgba(244, 238, 230, .78); font-size: 16px; line-height: 1.7; }
+.home-work-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+.home-card {
+  display: flex;
+  flex-direction: column;
+  color: var(--cream);
+  text-decoration: none;
+  border: 1px solid rgba(244, 238, 230, .12);
+  border-radius: 20px;
+  background: rgba(244, 238, 230, .035);
+  overflow: hidden;
+  transition: transform .3s ease, border-color .3s ease, background-color .3s ease;
+}
+.home-card:hover { transform: translateY(-4px); border-color: rgba(244, 238, 230, .32); background: rgba(244, 238, 230, .06); }
+.home-card-art { display: block; background: #e5d9c9; aspect-ratio: 4 / 3; overflow: hidden; }
+.home-card-art img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.home-card-copy { display: flex; flex-direction: column; gap: 10px; padding: 22px 22px 26px; flex: 1; }
+.home-card-meta { color: var(--sand); font-size: 10px; font-weight: 600; letter-spacing: .16em; }
+.home-card strong { font-family: "Instrument Serif", Georgia, serif; font-weight: 400; font-size: 32px; line-height: 1.08; }
+.home-card strong em { color: var(--sand); }
+.home-card-desc { color: rgba(244, 238, 230, .78); font-size: 14.5px; line-height: 1.6; flex: 1; }
+.home-card-link { margin-top: 8px; font-size: 11px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; }
+.home-card-featured { grid-column: 1 / -1; display: grid; grid-template-columns: 1.25fr 1fr; }
+.home-card-featured .home-card-art { aspect-ratio: auto; height: 100%; min-height: 340px; }
+.home-card-featured .home-card-copy { justify-content: center; padding: clamp(26px, 4vw, 52px); }
+.home-card-featured strong { font-size: clamp(38px, 4.4vw, 60px); }
+.home-card-featured .home-card-desc { flex: 0; font-size: 16px; }
+.home-work-foot { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 40px; }
+@media (max-width: 980px) {
+  .home-work-grid { grid-template-columns: 1fr 1fr; }
+  .home-card-featured { grid-template-columns: 1fr; }
+  .home-card-featured .home-card-art { min-height: 0; aspect-ratio: 4 / 3; }
+}
+@media (max-width: 640px) {
+  .home-work-grid { grid-template-columns: 1fr; gap: 20px; }
+  .home-card strong { font-size: 30px; }
+  .home-work-foot { flex-direction: column; }
+}
+@media (prefers-reduced-motion: reduce) { .home-card, .home-card:hover { transition: none; transform: none; } }

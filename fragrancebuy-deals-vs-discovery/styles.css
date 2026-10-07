@@ -157,3 +157,22 @@ dialog img{width:auto;height:auto;max-width:100%;margin:auto}
 .project-switcher{color:#30251e}.portfolio-footer h2{font-size:clamp(42px,6vw,78px);max-width:none}
 @media(max-width:650px){.concept-banner{font-size:11px}.concept-banner strong{line-height:1.6;display:block}.original-copy{font-size:15px}.original-board .panel-top{padding:14px;flex-wrap:wrap}.original-details>summary{font-size:14px}.dialog-bar{padding:12px}.hero-prototype-links{gap:20px}#original-image-link{display:none}.hero h1{white-space:normal}}
 @media(prefers-reduced-motion:reduce){.motion-ready .reveal:not(.in-view){opacity:1;transform:none}}
+
+/* At a glance + measurement plans */
+.fb-glance{padding:70px 0 0}
+.fb-glance .eyebrow{color:#8a7360}
+.glance{display:grid;grid-template-columns:repeat(5,1fr);margin:20px 0 0;border-top:1px solid var(--line)}
+.glance>div{padding:22px 20px 0 0;border-right:1px solid var(--line)}
+.glance>div+div{padding-left:20px}.glance>div:last-child{border-right:0}
+.glance dt{font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#8a7360;margin-bottom:10px}
+.glance dd{margin:0;font-size:14.5px;line-height:1.6}
+.metric-plan{border:1px solid currentColor;border-radius:8px;padding:clamp(24px,3vw,38px);border-color:rgba(127,104,82,.45)}
+.metric-plan-label{font-size:10px;font-weight:700;letter-spacing:.16em;color:var(--gold);margin:0 0 8px}
+.metric-plan dl{margin:0}
+.metric-plan dl>div{display:grid;grid-template-columns:150px 1fr;gap:20px;padding:18px 0;border-top:1px solid rgba(127,104,82,.35)}
+.metric-plan dl>div:first-child{border-top:0}
+.metric-plan dt{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;opacity:.75}
+.metric-plan dd{margin:0;font-size:16px;line-height:1.6}
+.metrics-b .metric-plan-label{color:#8a6a3c}
+@media(max-width:1000px){.glance{grid-template-columns:1fr 1fr}.glance>div,.glance>div+div{padding:18px 16px 18px 0;border-right:0;border-bottom:1px solid var(--line)}.glance>div:nth-child(even){padding-left:16px;border-left:1px solid var(--line)}}
+@media(max-width:650px){.fb-glance{padding-top:50px}.glance{grid-template-columns:1fr}.glance>div:nth-child(even){padding-left:0;border-left:0}.metric-plan dl>div{grid-template-columns:1fr;gap:6px}}
