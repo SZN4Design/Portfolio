@@ -305,3 +305,7 @@ body {
   .home-work-foot { flex-direction: column; }
 }
 @media (prefers-reduced-motion: reduce) { .home-card, .home-card:hover { transition: none; transform: none; } }
+
+.home-links{display:flex;flex-wrap:wrap;gap:12px 28px;margin-top:56px;padding-top:26px;border-top:1px solid rgba(244,238,230,.16)}
+.home-links a{color:rgba(244,238,230,.82);font-size:12px;font-weight:500;letter-spacing:.08em;text-decoration:none}
+.home-links a:hover{color:var(--cream);text-decoration:underline;text-underline-offset:5px}
