@@ -13,6 +13,7 @@ Static, responsive HTML, CSS and JavaScript. No framework, no package install, n
 | [FragranceBuy: Deals vs. Discovery](https://www.szn4.design/fragrancebuy-deals-vs-discovery/) | Ecommerce · CRO | [A](https://fragrancebuy-redesign.vercel.app/) · [B](https://fragrancebuy-redesign-protoype-b.vercel.app/) | [A](https://github.com/SZN4Design/Fragrancebuy-redesign) · [B](https://github.com/SZN4Design/Fragrancebuy-redesign-ProtoypeB) |
 | [CRVNCHMODE](https://www.szn4.design/crvnchmode-designing-a-smarter-way-to-choose-a-car/) | Automotive · decision UX | [Live](https://crunchmode.vercel.app/) | [Repo](https://github.com/SZN4Design/Crunchmode) |
 | [ListIQ](https://www.szn4.design/dealer-listing-optimization-platform/) | B2B · AI-assisted UX | [Live](https://listing-quality-assistant.vercel.app/) | [Repo](https://github.com/SZN4Design/Listing-quality-assistant) |
+| [CallFlow — 311 Learning Lab](https://www.szn4.design/callflow-311-learning-lab/) | Learning experience · Service UX | [Code & working prototype](https://github.com/SZN4Design/callflow-311-learning-lab) | [Repo](https://github.com/SZN4Design/callflow-311-learning-lab) |
 | [Market Demand Forecaster](https://www.szn4.design/market-demand-forecaster/) | Data visualization | [Live](https://demand-flow-advisor.vercel.app/) | [Repo](https://github.com/SZN4Design/Demand-flow-advisor) |
 
 ## Routes
@@ -20,6 +21,7 @@ Static, responsive HTML, CSS and JavaScript. No framework, no package install, n
 - `/`: animated welcome with a wheel-style scroll intro, then role statement and selected work
 - `/about-me/`: story, skills and contact form
 - `/ui-ux-projects/`: all case studies
+- `/callflow-311-learning-lab/`: 311 customer-service learning and documentation case study
 - `/fragrancebuy-deals-vs-discovery/`, `/crvnchmode-designing-a-smarter-way-to-choose-a-car/`, `/dealer-listing-optimization-platform/` (ListIQ), `/market-demand-forecaster/`
 
 The old `/welcome-1`, `/work` and `/projects` routes redirect to their current pages (see `vercel.json`).
@@ -32,6 +34,7 @@ assets/site.css                     Shared nav (with social icons) and footer
 assets/projects.css, projects.js    Work page and case-study pages
 assets/brand/                       Logo, mark and favicons
 assets/projects/<slug>/             Case-study images
+callflow-311-learning-lab/            CallFlow case study page and styles
 about-me/                           About page, its styles and images
 fragrancebuy-deals-vs-discovery/    FragranceBuy case study (own styles and script)
 ```
@@ -61,7 +64,7 @@ The About page form posts to FormSubmit at `sabrina@szn4.design`. Delivery depen
 
 ## A note on data
 
-All four case studies are self-initiated concepts. Scores, forecasts, prices and metrics in the prototypes are illustrative, not measured results.
+All five case studies are self-initiated concepts. Scores, forecasts, prices and metrics in the prototypes are illustrative, not measured results.
 
 ---
 
